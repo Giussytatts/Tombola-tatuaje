@@ -28,17 +28,15 @@
     .rainbow-border {
       position: relative;
       border-radius: 20px;
-      padding: 0;
+      padding: 0; /* padding îl punem în interior */
       z-index: 0;
     }
     .rainbow-border::before {
       content: "";
       position: absolute;
-      top: -1.5px; 
-      bottom: -1.5px;
-      left: -1.5px;
-      right: -1.5px;
-      border-radius: 22px;
+      top: -3px; bottom: -3px;
+      left: -3px; right: -3px;
+      border-radius: 23px;
       background: linear-gradient(
         45deg,
         red,
@@ -149,11 +147,23 @@
       .container {
         flex-direction: column;
         align-items: center;
+        gap: 20px; /* mai mic spațiu între containere */
+        padding: 10px; /* padding mai mic */
+        height: auto; /* ca să nu limiteze înălțimea */
+      }
+
+      .rainbow-border::before {
+        top: -1px;
+        bottom: -1px;
+        left: -1px;
+        right: -1px;
+        border-radius: 20px;
       }
 
       .regulament,
       .form-container {
         width: 100%;
+        padding: 15px; /* padding mai mic pe mobil */
       }
     }
   </style>
