@@ -12,52 +12,30 @@
       margin: 0;
       padding: 0;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header {
-      background-color: #111;
-      padding: 15px 0;
-      text-align: center;
-      color: gold;
-      font-size: 24px;
-      font-weight: bold;
-      text-shadow: 0 0 8px gold;
-    }
-
-    footer {
-      background-color: #111;
-      text-align: center;
-      padding: 10px;
-      color: #ccc;
-      font-size: 14px;
-      margin-top: auto;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .container {
       display: flex;
       gap: 40px;
       max-width: 1000px;
-      padding: 30px 20px;
-      margin: auto;
+      padding: 20px;
     }
 
+    /* Container cu bordura rainbow animată */
     .rainbow-border {
       position: relative;
       border-radius: 20px;
-      padding: 0;
+      padding: 0; /* padding îl punem în interior */
       z-index: 0;
     }
-
     .rainbow-border::before {
       content: "";
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: -3px;
+      top: -3px; bottom: -3px;
+      left: -3px; right: -3px;
       border-radius: 23px;
       background: linear-gradient(
         45deg,
@@ -73,7 +51,6 @@
       background-size: 400% 400%;
       animation: glow 6s linear infinite;
       z-index: -1;
-      pointer-events: none;
     }
 
     @keyframes glow {
@@ -170,46 +147,18 @@
       .container {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        padding: 10px;
       }
 
       .regulament,
       .form-container {
         width: 100%;
-        padding: 15px;
       }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    Tombola Tattoo 2025
-  </header>
-
-  <div class="container">
-    <div class="rainbow-border">
-      <div class="regulament">
-        <h3>🎯 Cum participi la tombolă?</h3>
-        <ul>
-          <li>Completează formularul de mai jos.</li>
-          <li>Scrie sincer de ce vrei să câștigi un tatuaj gratuit.</li>
-          <li>Asigură-te că datele tale de contact sunt corecte.</li>
-        </ul>
-
-        <h3>🧼 Igiena & Siguranța în salon</h3>
-        <ul>
-          <li>Toate echipamentele sunt sterile și de unică folosință.</li>
-          <li>Se respectă toate normele sanitare și igienico-sanitare în vigoare.</li>
-          <li>Procedurile sunt realizate într-un mediu sigur și curat.</li>
-          <li>Clientul primește recomandări post-tatuaj clare și personalizate.</li>
-        </ul>
-
-        <p>🎉 Participă cu încredere – siguranța ta este prioritatea noastră!</p>
       </div>
     </div>
-
     <div class="rainbow-border">
       <div class="form-container">
         <h2>Înscrie-te la Tombolă</h2>
@@ -228,13 +177,15 @@
 
           <button type="submit">Trimite</button>
         </form>
+		<h3>🧼 Igiena & Siguranța în salon</h3>
+        <ul>
+          <li>Toate echipamentele sunt sterile și de unică folosință.</li>
+          <li>Se respectă toate normele sanitare și igienico-sanitare în vigoare.</li>
+          <li>Procedurile sunt realizate într-un mediu sigur și curat.</li>
+          <li>Clientul primește recomandări post-tatuaj clare și personalizate.</li>
+        </ul>
       </div>
     </div>
   </div>
-
-  <footer>
-    © 2025 Joc. Toate drepturile sunt rezervate.
-  </footer>
-
 </body>
 </html>
