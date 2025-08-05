@@ -12,30 +12,51 @@
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #111;
+      padding: 15px 0;
+      text-align: center;
+      color: gold;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 0 8px gold;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 10px;
+      color: #ccc;
+      font-size: 14px;
+      margin-top: auto;
     }
 
     .container {
       display: flex;
       gap: 40px;
       max-width: 1000px;
-      padding: 20px;
+      padding: 30px 20px;
+      margin: auto;
     }
 
-    /* Container cu bordura rainbow animată */
     .rainbow-border {
       position: relative;
       border-radius: 20px;
-      padding: 0; /* padding îl punem în interior */
+      padding: 0;
       z-index: 0;
     }
+
     .rainbow-border::before {
       content: "";
       position: absolute;
-      top: -3px; bottom: -3px;
-      left: -3px; right: -3px;
+      top: -3px;
+      bottom: -3px;
+      left: -3px;
+      right: -3px;
       border-radius: 23px;
       background: linear-gradient(
         45deg,
@@ -147,9 +168,8 @@
       .container {
         flex-direction: column;
         align-items: center;
-        gap: 20px; /* mai mic spațiu între containere */
-        padding: 10px; /* padding mai mic */
-        height: auto; /* ca să nu limiteze înălțimea */
+        gap: 20px;
+        padding: 10px;
       }
 
       .rainbow-border::before {
@@ -163,12 +183,17 @@
       .regulament,
       .form-container {
         width: 100%;
-        padding: 15px; /* padding mai mic pe mobil */
+        padding: 15px;
       }
     }
   </style>
 </head>
 <body>
+
+  <header>
+    Tombola Tattoo 2025
+  </header>
+
   <div class="container">
     <div class="rainbow-border">
       <div class="regulament">
@@ -212,5 +237,10 @@
       </div>
     </div>
   </div>
+
+  <footer>
+    © 2025 Joc. Toate drepturile sunt rezervate.
+  </footer>
+
 </body>
 </html>
