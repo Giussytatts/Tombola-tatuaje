@@ -53,10 +53,11 @@
     .rainbow-border::before {
       content: "";
       position: absolute;
-      top: -3px;
-      bottom: -3px;
-      left: -3px;
-      right: -3px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: -3px;
       border-radius: 23px;
       background: linear-gradient(
         45deg,
@@ -72,6 +73,7 @@
       background-size: 400% 400%;
       animation: glow 6s linear infinite;
       z-index: -1;
+      pointer-events: none;
     }
 
     @keyframes glow {
@@ -170,14 +172,6 @@
         align-items: center;
         gap: 20px;
         padding: 10px;
-      }
-
-      .rainbow-border::before {
-        top: -1px;
-        bottom: -1px;
-        left: -1px;
-        right: -1px;
-        border-radius: 20px;
       }
 
       .regulament,
