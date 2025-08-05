@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Înscriere Tombolă Tatuaje</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      font-family: 'Arial', sans-serif;
+      color: gold;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      max-width: 1000px;
+      padding: 20px;
+    }
+
+    /* Container cu bordura rainbow animată */
+    .rainbow-border {
+      position: relative;
+      border-radius: 20px;
+      padding: 0; /* padding îl punem în interior */
+      z-index: 0;
+    }
+    .rainbow-border::before {
+      content: "";
+      position: absolute;
+      top: -3px; bottom: -3px;
+      left: -3px; right: -3px;
+      border-radius: 23px;
+      background: linear-gradient(
+        45deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet,
+        red
+      );
+      background-size: 400% 400%;
+      animation: glow 6s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes glow {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .regulament {
+      width: 450px;
+      background-color: #1a1a1a;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      font-size: 15px;
+      line-height: 1.6;
+      color: #ffffff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .regulament h3 {
+      color: gold;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px gold;
+    }
+
+    .form-container {
+      width: 300px;
+      background-color: #1a1a1a;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: gold;
+      text-shadow: 0 0 10px gold;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 5px;
+      color: gold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      background-color: #333;
+      color: gold;
+      font-size: 14px;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 18px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: gold;
+      color: #0d0d0d;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #ffd700;
+      box-shadow: 0 0 10px gold;
+    }
+
+    @media screen and (max-width: 800px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .regulament,
+      .form-container {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="rainbow-border">
+      <div class="regulament">
+        <h3>🎯 Cum participi la tombolă?</h3>
+        <ul>
+          <li>Completează formularul de mai jos.</li>
+          <li>Scrie sincer de ce vrei să câștigi un tatuaj gratuit.</li>
+          <li>Asigură-te că datele tale de contact sunt corecte.</li>
+        </ul>
+
+        <h3>🧼 Igiena & Siguranța în salon</h3>
+        <ul>
+          <li>Toate echipamentele sunt sterile și de unică folosință.</li>
+          <li>Se respectă toate normele sanitare și igienico-sanitare în vigoare.</li>
+          <li>Procedurile sunt realizate într-un mediu sigur și curat.</li>
+          <li>Clientul primește recomandări post-tatuaj clare și personalizate.</li>
+        </ul>
+
+        <p>🎉 Participă cu încredere – siguranța ta este prioritatea noastră!</p>
+      </div>
+    </div>
+
+    <div class="rainbow-border">
+      <div class="form-container">
+        <h2>Înscrie-te la Tombolă</h2>
+        <form action="https://formspree.io/f/xanogooz" method="POST">
+          <label for="nume">Nume:</label>
+          <input type="text" id="nume" name="nume" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="telefon">Telefon:</label>
+          <input type="tel" id="telefon" name="telefon" required />
+
+          <label for="motiv">De ce vrei să câștigi?</label>
+          <textarea id="motiv" name="motiv" rows="3" required></textarea>
+
+          <button type="submit">Trimite</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
